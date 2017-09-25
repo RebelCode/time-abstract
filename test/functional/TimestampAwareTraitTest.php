@@ -71,7 +71,7 @@ class TimestampAwareTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $timestamp = rand(+0, PHP_INT_MAX);
+        $timestamp = rand(0, PHP_INT_MAX);
 
         $reflect->_setTimestamp($timestamp);
 
@@ -88,7 +88,7 @@ class TimestampAwareTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $timestamp = (string) rand(+0, PHP_INT_MAX);
+        $timestamp = (string) rand(0, PHP_INT_MAX);
 
         $reflect->_setTimestamp($timestamp);
 
@@ -105,7 +105,7 @@ class TimestampAwareTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $timestamp = rand(+0, PHP_INT_MAX);
+        $timestamp = rand(0, PHP_INT_MAX);
         $stringable = $this->mock('Dhii\Util\String\StringableInterface')
             ->__toString((string) $timestamp)
             ->new();
@@ -125,7 +125,7 @@ class TimestampAwareTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $timestamp = rand(-0, -PHP_INT_MAX);
+        $timestamp = rand(0, -PHP_INT_MAX);
 
         $reflect->_setTimestamp($timestamp);
 
@@ -142,7 +142,7 @@ class TimestampAwareTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $timestamp = (string) rand(-0, -PHP_INT_MAX);
+        $timestamp = (string) rand(0, -PHP_INT_MAX);
 
         $reflect->_setTimestamp($timestamp);
 
