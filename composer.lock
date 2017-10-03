@@ -973,12 +973,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/time-interface.git",
-                "reference": "ac7646aec91e851d65f8f5250578ccc8e784af1e"
+                "reference": "aa69396ba0b75f72a0951e294957999496edf1e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/time-interface/zipball/ac7646aec91e851d65f8f5250578ccc8e784af1e",
-                "reference": "ac7646aec91e851d65f8f5250578ccc8e784af1e",
+                "url": "https://api.github.com/repos/RebelCode/time-interface/zipball/aa69396ba0b75f72a0951e294957999496edf1e8",
+                "reference": "aa69396ba0b75f72a0951e294957999496edf1e8",
                 "shasum": ""
             },
             "require": {
@@ -1007,7 +1007,7 @@
                 }
             ],
             "description": "Interfaces for dealing with time.",
-            "time": "2017-09-25 07:45:50"
+            "time": "2017-10-03T11:05:32+00:00"
         },
         {
             "name": "satooshi/php-coveralls",
