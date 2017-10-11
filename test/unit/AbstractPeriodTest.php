@@ -31,7 +31,7 @@ class AbstractPeriodTest extends TestCase
      */
     public function createTimeInstance($timestamp)
     {
-        $mock = $this->mock('RebelCode\Time\TimeInterface')
+        $mock = $this->mock('Dhii\Time\TimeInterface')
                      ->getTimestamp($timestamp);
 
         return $mock->new();

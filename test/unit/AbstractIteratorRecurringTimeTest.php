@@ -3,9 +3,9 @@
 namespace RebelCode\Time\UnitTest;
 
 use PHPUnit_Framework_MockObject_MockObject;
-use RebelCode\Time\IntervalInterface;
-use RebelCode\Time\PeriodInterface;
-use RebelCode\Time\TimeInterface;
+use Dhii\Time\IntervalInterface;
+use Dhii\Time\PeriodInterface;
+use Dhii\Time\TimeInterface;
 use Xpmock\TestCase;
 use RebelCode\Time\AbstractIteratorRecurringTime as TestSubject;
 
@@ -62,7 +62,7 @@ class AbstractIteratorRecurringTimeTest extends TestCase
      */
     public function createPeriod(TimeInterface $start, TimeInterface $end)
     {
-        return $this->mock('RebelCode\Time\PeriodInterface')
+        return $this->mock('Dhii\Time\PeriodInterface')
                     ->getStart($start)
                     ->getEnd($end)
                     ->getDuration($end->getTimestamp() - $start->getTimestamp())
@@ -80,7 +80,7 @@ class AbstractIteratorRecurringTimeTest extends TestCase
      */
     public function createTime($timestamp)
     {
-        return $this->mock('RebelCode\Time\TimeInterface')
+        return $this->mock('Dhii\Time\TimeInterface')
                     ->getTimestamp($timestamp)
                     ->new();
     }
@@ -96,7 +96,7 @@ class AbstractIteratorRecurringTimeTest extends TestCase
      */
     public function createInterval($duration)
     {
-        return $this->mock('RebelCode\Time\IntervalInterface')
+        return $this->mock('Dhii\Time\IntervalInterface')
                     ->getDuration($duration)
                     ->new();
     }

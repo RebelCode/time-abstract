@@ -68,7 +68,7 @@ class IntervalAwareTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $interval = $this->mock('RebelCode\Time\IntervalInterface')
+        $interval = $this->mock('Dhii\Time\IntervalInterface')
                         ->getDuration()
                         ->new();
 

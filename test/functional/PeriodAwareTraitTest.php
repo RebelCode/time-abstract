@@ -70,7 +70,7 @@ class PeriodAwareTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $period = $this->mock('RebelCode\Time\PeriodInterface')
+        $period = $this->mock('Dhii\Time\PeriodInterface')
             ->getStart()
             ->getEnd()
             ->getDuration()
