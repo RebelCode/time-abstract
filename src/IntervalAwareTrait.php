@@ -2,6 +2,7 @@
 
 namespace RebelCode\Time;
 
+use Dhii\Time\IntervalInterface;
 use Dhii\Util\String\StringableInterface as Stringable;
 use Exception as RootException;
 use InvalidArgumentException;

@@ -2,6 +2,8 @@
 
 namespace RebelCode\Time;
 
+use Dhii\Time\TimeInterface;
+
 /**
  * Abstract common functionality for periods of time.
  *

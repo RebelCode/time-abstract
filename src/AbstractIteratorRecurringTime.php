@@ -2,6 +2,10 @@
 
 namespace RebelCode\Time;
 
+use Dhii\Time\IntervalInterface;
+use Dhii\Time\PeriodInterface;
+use Dhii\Time\TimeInterface;
+
 /**
  * Abstract functionality for recurring time instances that implement iterator-like behaviour.
  *
