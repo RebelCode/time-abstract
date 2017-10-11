@@ -107,8 +107,8 @@ class TimestampAwareTraitTest extends TestCase
         $reflect = $this->reflect($subject);
         $timestamp = rand(0, PHP_INT_MAX);
         $stringable = $this->mock('Dhii\Util\String\StringableInterface')
-            ->__toString((string) $timestamp)
-            ->new();
+                           ->__toString((string) $timestamp)
+                           ->new();
 
         $reflect->_setTimestamp($stringable);
 
