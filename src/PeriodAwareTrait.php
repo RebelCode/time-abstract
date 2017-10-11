@@ -46,7 +46,7 @@ trait PeriodAwareTrait
     {
         if ($period !== null && !($period instanceof PeriodInterface)) {
             throw $this->_createInvalidArgumentException(
-                $this->__('Argument is not a valid period instance or null.'),
+                $this->__('Argument is not a valid period'),
                 null,
                 null,
                 $period

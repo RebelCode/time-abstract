@@ -46,7 +46,7 @@ trait IntervalAwareTrait
     {
         if ($interval !== null && !($interval instanceof IntervalInterface)) {
             throw $this->_createInvalidArgumentException(
-                $this->__('Argument is not a valid interval instance or null.'),
+                $this->__('Argument is not a valid interval'),
                 null,
                 null,
                 $interval

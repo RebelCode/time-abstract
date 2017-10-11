@@ -47,7 +47,7 @@ trait TimestampAwareTrait
 
         if ($sanitized === false) {
             throw $this->_createInvalidArgumentException(
-                $this->__('Argument is not a valid timestamp.'),
+                $this->__('Argument is not a valid timestamp'),
                 null,
                 null,
                 $timestamp
