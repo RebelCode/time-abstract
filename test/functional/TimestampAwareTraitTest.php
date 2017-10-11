@@ -4,12 +4,11 @@ namespace RebelCode\Time\FuncTest;
 
 use InvalidArgumentException;
 use PHPUnit_Framework_MockObject_MockObject;
-use RebelCode\Time\TimestampAwareTrait as TestSubject;
 use stdClass;
 use Xpmock\TestCase;
 
 /**
- * Tests {@see TestSubject}.
+ * Tests {@see RebelCode\Time\TimestampAwareTrait}.
  *
  * @since [*next-version*]
  */

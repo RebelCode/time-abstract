@@ -7,10 +7,9 @@ use Dhii\Time\IntervalInterface;
 use Dhii\Time\PeriodInterface;
 use Dhii\Time\TimeInterface;
 use Xpmock\TestCase;
-use RebelCode\Time\AbstractIteratorRecurringTime as TestSubject;
 
 /**
- * Tests {@see TestSubject}.
+ * Tests {@see RebelCode\Time\AbstractIteratorRecurringTime}.
  *
  * @since [*next-version*]
  */
