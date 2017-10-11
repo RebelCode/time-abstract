@@ -79,7 +79,6 @@ trait IntervalAwareTrait
      * Translates a string, and replaces placeholders.
      *
      * @since [*next-version*]
-     * @see   sprintf()
      *
      * @param string $string  The format string to translate.
      * @param array  $args    Placeholder values to replace in the string.
