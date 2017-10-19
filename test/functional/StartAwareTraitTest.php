@@ -31,7 +31,7 @@ class StartAwareTraitTest extends TestCase
     {
         // Create mock
         $mock = $this->getMockBuilder(static::TEST_SUBJECT_CLASSNAME)
-                     ->setMethods(['__', '_createInvalidArgumentException'])
+                     ->setMethods(['__', '_createInvalidArgumentException', '_sanitizeTimestamp'])
                      ->getMockForTrait();
 
         $mock->method('_createInvalidArgumentException')->willReturnCallback(
