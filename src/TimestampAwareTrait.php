@@ -43,19 +43,19 @@ trait TimestampAwareTrait
      */
     protected function _setTimestamp($timestamp)
     {
-        $sanitized = filter_var($timestamp, FILTER_VALIDATE_INT);
-
-        if ($sanitized === false) {
-            throw $this->_createInvalidArgumentException(
-                $this->__('Argument is not a valid timestamp'),
-                null,
-                null,
-                $timestamp
-            );
-        }
-
-        $this->timestamp = $sanitized;
+        $this->timestamp = $this->_sanitizeTimestamp($timestamp);
     }
+
+    /**
+     * Sanitizes a timestamp to an integer number.
+     *
+     * @since [*next-version*]
+     *
+     * @param int|string|Stringable|null $timestamp The timestamp.
+     *
+     * @return int The sanitized timestamp.
+     */
+    abstract protected function _sanitizeTimestamp($timestamp);
 
     /**
      * Creates a new invalid argument exception.

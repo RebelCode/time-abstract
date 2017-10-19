@@ -4,7 +4,6 @@ namespace RebelCode\Time\FuncTest;
 
 use InvalidArgumentException;
 use PHPUnit_Framework_MockObject_MockObject;
-use stdClass;
 use Xpmock\TestCase;
 
 /**
@@ -36,7 +35,7 @@ class TimestampAwareTraitTest extends TestCase
         );
 
         $mock->method('_createInvalidArgumentException')->willReturnCallback(
-            function ($message) {
+            function($message) {
                 return new InvalidArgumentException($message);
             }
         );
@@ -68,116 +67,40 @@ class TimestampAwareTraitTest extends TestCase
      */
     public function testGetSetTimestampInt()
     {
-        $subject = $this->createInstance();
-        $reflect = $this->reflect($subject);
+        $subject   = $this->createInstance();
+        $reflect   = $this->reflect($subject);
         $timestamp = rand(0, PHP_INT_MAX);
 
+        $subject->method('_sanitizeTimestamp')->willReturnArgument(0);
         $reflect->_setTimestamp($timestamp);
 
-        $this->assertEquals($timestamp, $reflect->_getTimestamp(), 'Set and retrieved timestamps do not match');
-        $this->assertInternalType('int', $reflect->_getTimestamp());
+        $this->assertEquals(
+            $timestamp,
+            $output = $reflect->_getTimestamp(),
+            'Set and retrieved timestamps do not match'
+        );
+        $this->assertInternalType('int', $output);
     }
 
     /**
-     * Tests the timestamp getter and setter methods with an integer string.
+     * Tests the getter and setter methods to ensure that the timestamp is not set when sanitization fails.
      *
      * @since [*next-version*]
      */
-    public function testGetSetTimestampIntString()
+    public function testGetSetTimestampSanitizeFail()
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $timestamp = (string) rand(0, PHP_INT_MAX);
+        $first   = rand(0, PHP_INT_MAX);
+        $second  = rand(0, PHP_INT_MAX);
 
-        $reflect->_setTimestamp($timestamp);
+        $reflect->_setTimestamp($first);
 
-        $this->assertEquals($timestamp, $reflect->_getTimestamp(), 'Set and retrieved timestamps do not match');
-        $this->assertInternalType('int', $reflect->_getTimestamp());
-    }
-
-    /**
-     * Tests the timestamp getter and setter methods with a stringable instance that casts into an integer string.
-     *
-     * @since [*next-version*]
-     */
-    public function testGetSetTimestampIntStringable()
-    {
-        $subject = $this->createInstance();
-        $reflect = $this->reflect($subject);
-        $timestamp = rand(0, PHP_INT_MAX);
-        $stringable = $this->mock('Dhii\Util\String\StringableInterface')
-                           ->__toString((string) $timestamp)
-                           ->new();
-
-        $reflect->_setTimestamp($stringable);
-
-        $this->assertEquals($timestamp, $reflect->_getTimestamp(), 'Set and retrieved timestamps do not match');
-        $this->assertInternalType('int', $reflect->_getTimestamp());
-    }
-
-    /**
-     * Tests the timestamp getter and setter methods with a negative integer.
-     *
-     * @since [*next-version*]
-     */
-    public function testGetSetTimestampNegative()
-    {
-        $subject = $this->createInstance();
-        $reflect = $this->reflect($subject);
-        $timestamp = rand(0, -PHP_INT_MAX);
-
-        $reflect->_setTimestamp($timestamp);
-
-        $this->assertEquals($timestamp, $reflect->_getTimestamp(), 'Set and retrieved timestamps do not match');
-        $this->assertInternalType('int', $reflect->_getTimestamp());
-    }
-
-    /**
-     * Tests the timestamp getter and setter methods with a negative integer string.
-     *
-     * @since [*next-version*]
-     */
-    public function testGetSetTimestampNegativeString()
-    {
-        $subject = $this->createInstance();
-        $reflect = $this->reflect($subject);
-        $timestamp = (string) rand(0, -PHP_INT_MAX);
-
-        $reflect->_setTimestamp($timestamp);
-
-        $this->assertEquals($timestamp, $reflect->_getTimestamp(), 'Set and retrieved timestamps do not match');
-        $this->assertInternalType('int', $reflect->_getTimestamp());
-    }
-
-    /**
-     * Tests the timestamp getter and setter methods with a float.
-     *
-     * @since [*next-version*]
-     */
-    public function testGetSetTimestampFloat()
-    {
-        $subject = $this->createInstance();
-        $reflect = $this->reflect($subject);
-        $timestamp = rand(0, PHP_INT_MAX) + 0.1;
+        $subject->method('_sanitizeTimestamp')->willThrowException(new InvalidArgumentException());
 
         $this->setExpectedException('InvalidArgumentException');
+        $reflect->_setTimestamp($second);
 
-        $reflect->_setTimestamp($timestamp);
-    }
-
-    /**
-     * Tests the timestamp getter and setter methods with any other object.
-     *
-     * @since [*next-version*]
-     */
-    public function testGetSetTimestampObject()
-    {
-        $subject = $this->createInstance();
-        $reflect = $this->reflect($subject);
-        $timestamp = new stdClass();
-
-        $this->setExpectedException('InvalidArgumentException');
-
-        $reflect->_setTimestamp($timestamp);
+        $this->assertEquals($first, $reflect->_getTimestmap(), 'Timestamp is not equal to previously set value.');
     }
 }
