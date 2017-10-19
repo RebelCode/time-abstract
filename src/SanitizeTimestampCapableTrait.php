@@ -25,9 +25,22 @@ trait SanitizeTimestampCapableTrait
      */
     protected function _sanitizeTimestamp($timestamp)
     {
-        $sanitized = filter_var($timestamp, FILTER_VALIDATE_INT);
+        $isObject     = is_object($timestamp);
+        $isArray      = is_array($timestamp);
+        $isStringable = $isObject && method_exists($timestamp, '__toString');
 
-        if ($sanitized === false) {
+        // Get the string representation - this should lead to no loss of information
+        $stringVal = (!$isObject && !$isArray) || $isStringable
+            ? strval($timestamp)
+            : null;
+
+        // Get the integer value - some data in the string might be lost here
+        $intVal = intval($stringVal);
+
+        // Cast back into a string and check if equivalence was lost due to data loss
+        $isInt = $stringVal === strval($intVal);
+
+        if (!$isInt) {
             throw $this->_createInvalidArgumentException(
                 $this->__('Argument is not a valid timestamp'),
                 null,
@@ -36,7 +49,7 @@ trait SanitizeTimestampCapableTrait
             );
         }
 
-        return $sanitized;
+        return $intVal;
     }
 
     /**
