@@ -65,21 +65,24 @@ class TimestampAwareTraitTest extends TestCase
      *
      * @since [*next-version*]
      */
-    public function testGetSetTimestampInt()
+    public function testGetSetTimestamp()
     {
         $subject   = $this->createInstance();
         $reflect   = $this->reflect($subject);
         $timestamp = rand(0, PHP_INT_MAX);
 
-        $subject->method('_sanitizeTimestamp')->willReturnArgument(0);
+        $subject->expects($this->once())
+                ->method('_sanitizeTimestamp')
+                ->with($timestamp)
+                ->willReturnArgument(0);
+
         $reflect->_setTimestamp($timestamp);
 
         $this->assertEquals(
             $timestamp,
-            $output = $reflect->_getTimestamp(),
+            $reflect->_getTimestamp(),
             'Set and retrieved timestamps do not match'
         );
-        $this->assertInternalType('int', $output);
     }
 
     /**
