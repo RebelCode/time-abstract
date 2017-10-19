@@ -79,7 +79,7 @@ class StartAwareTraitTest extends TestCase
 
         $reflect->_setStart($input);
 
-        $this->assertEquals($output, $reflect->_getStart());
+        $this->assertEquals($output, $reflect->_getStart(), 'Retrieved value is not equal to sanitized input.');
     }
 
     /**

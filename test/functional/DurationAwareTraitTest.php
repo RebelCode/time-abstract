@@ -80,7 +80,7 @@ class DurationAwareTraitTest extends TestCase
 
         $reflect->_setDuration($input);
 
-        $this->assertSame($output, $reflect->_getDuration(), 'Set and retrieved value are not the same.');
+        $this->assertSame($output, $reflect->_getDuration(), 'Retrieved value is not equal to sanitized input.');
     }
 
     /**

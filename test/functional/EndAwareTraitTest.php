@@ -80,7 +80,7 @@ class EndAwareTraitTest extends TestCase
 
         $reflect->_setEnd($input);
 
-        $this->assertEquals($output, $reflect->_getEnd(), 'Set and retrieved value are not the same.');
+        $this->assertEquals($output, $reflect->_getEnd(), 'Retrieved value is not equal to sanitized input.');
     }
 
     /**

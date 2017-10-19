@@ -81,7 +81,7 @@ class TimestampAwareTraitTest extends TestCase
         $this->assertEquals(
             $timestamp,
             $reflect->_getTimestamp(),
-            'Set and retrieved timestamps do not match'
+            'Retrieved value is not equal to sanitized input.'
         );
     }
 
