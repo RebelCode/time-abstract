@@ -70,7 +70,7 @@ class SanitizeTimestampCapableTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $input   = rand(0, time());
+        $input   = rand(0, PHP_INT_MAX);
 
         $this->assertEquals($input, $output = $reflect->_sanitizeTimestamp($input));
         $this->assertInternalType('integer', $output);
@@ -85,7 +85,7 @@ class SanitizeTimestampCapableTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $input   = - rand(0, time());
+        $input   = - rand(0, PHP_INT_MAX);
 
         $this->assertEquals($input, $output = $reflect->_sanitizeTimestamp($input));
         $this->assertInternalType('integer', $output);
@@ -100,7 +100,7 @@ class SanitizeTimestampCapableTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $integer = rand(0, time());
+        $integer = rand(0, PHP_INT_MAX);
         $input   = floatval($integer);
 
         $this->assertEquals($integer, $output = $reflect->_sanitizeTimestamp($input));
@@ -116,7 +116,7 @@ class SanitizeTimestampCapableTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $integer = -rand(0, time());
+        $integer = -rand(0, PHP_INT_MAX);
         $input   = floatval($integer);
 
         $this->assertEquals($integer, $output = $reflect->_sanitizeTimestamp($input));
@@ -132,7 +132,7 @@ class SanitizeTimestampCapableTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $integer = rand(0, time());
+        $integer = rand(0, PHP_INT_MAX);
         $input   = "$integer";
 
         $this->assertEquals($integer, $output = $reflect->_sanitizeTimestamp($input));
@@ -148,7 +148,7 @@ class SanitizeTimestampCapableTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $integer = - rand(0, time());
+        $integer = - rand(0, PHP_INT_MAX);
         $input   = "$integer";
 
         $this->assertEquals($integer, $output = $reflect->_sanitizeTimestamp($input));
@@ -180,7 +180,7 @@ class SanitizeTimestampCapableTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $integer = rand(0, time());
+        $integer = rand(0, PHP_INT_MAX);
         $string  = "$integer";
         $input   = $this->mock('Dhii\Util\String\StringableInterface')
                         ->__toString($string)
