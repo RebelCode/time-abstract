@@ -69,7 +69,7 @@ class TimestampAwareTraitTest extends TestCase
     {
         $subject   = $this->createInstance();
         $reflect   = $this->reflect($subject);
-        $timestamp = rand(0, PHP_INT_MAX);
+        $timestamp = rand();
 
         $subject->expects($this->once())
                 ->method('_sanitizeTimestamp')
@@ -94,8 +94,8 @@ class TimestampAwareTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $first   = rand(0, PHP_INT_MAX);
-        $second  = rand(0, PHP_INT_MAX);
+        $first   = rand();
+        $second  = rand();
 
         $reflect->_setTimestamp($first);
 
