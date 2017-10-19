@@ -34,7 +34,7 @@ abstract class AbstractPeriod
      *
      * @since [*next-version*]
      *
-     * @return int An integer number of seconds. May be negative if the start time is larger than the end time.
+     * @return int An integer number of seconds.
      */
     protected function _getDuration()
     {
