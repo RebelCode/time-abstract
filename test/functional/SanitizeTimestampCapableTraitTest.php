@@ -100,7 +100,23 @@ class SanitizeTimestampCapableTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $integer = rand(0, PHP_INT_MAX);
+        $float = (float)rand() / (float)getrandmax();
+
+        $this->setExpectedException('InvalidArgumentException');
+
+        $reflect->_sanitizeTimestamp($float);
+    }
+
+    /**
+     * Tests the sanitize method with a float that is a whole number.
+     *
+     * @since [*next-version*]
+     */
+    public function testSanitizeTimestampFloatInt()
+    {
+        $subject = $this->createInstance();
+        $reflect = $this->reflect($subject);
+        $integer = rand();
         $input   = floatval($integer);
 
         $this->assertEquals($integer, $output = $reflect->_sanitizeTimestamp($input));
