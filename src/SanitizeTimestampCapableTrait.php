@@ -2,7 +2,6 @@
 
 namespace RebelCode\Time;
 
-use Dhii\Util\String\StringableInterface;
 use Dhii\Util\String\StringableInterface as Stringable;
 use Exception as RootException;
 use InvalidArgumentException;
@@ -19,7 +18,7 @@ trait SanitizeTimestampCapableTrait
      *
      * @since [*next-version*]
      *
-     * @param int|string|StringableInterface|null $timestamp The timestamp.
+     * @param int|string|Stringable|null $timestamp The timestamp.
      *
      * @return int The sanitized timestamp.
      */
