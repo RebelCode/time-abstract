@@ -35,7 +35,7 @@ class StartAwareTraitTest extends TestCase
                      ->getMockForTrait();
 
         $mock->method('_createInvalidArgumentException')->willReturnCallback(
-            function($message) {
+            function ($message) {
                 return new InvalidArgumentException($message);
             }
         );
@@ -69,8 +69,8 @@ class StartAwareTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $input   = rand();
-        $output  = rand();
+        $input = rand();
+        $output = rand();
 
         $subject->expects($this->once())
                 ->method('_sanitizeTimestamp')
@@ -92,8 +92,8 @@ class StartAwareTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $first   = rand();
-        $second  = rand();
+        $first = rand();
+        $second = rand();
 
         $reflect->_setStart($first);
 

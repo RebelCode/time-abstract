@@ -2,7 +2,7 @@
 
 namespace RebelCode\Time\FuncTest;
 
-use \InvalidArgumentException;
+use InvalidArgumentException;
 use PHPUnit_Framework_MockObject_MockObject;
 use Xpmock\TestCase;
 use RebelCode\Time\EndAwareTrait as TestSubject;
@@ -37,7 +37,7 @@ class EndAwareTraitTest extends TestCase
 
         $mock->method('__')->willReturnArgument(0);
         $mock->method('_createArgumentException')->willReturnCallback(
-            function($msg = '', $code = 0, $prev = null) {
+            function ($msg = '', $code = 0, $prev = null) {
                 return new InvalidArgumentException($msg, $code, $prev);
             }
         );
@@ -70,8 +70,8 @@ class EndAwareTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $input   = rand();
-        $output  = rand();
+        $input = rand();
+        $output = rand();
 
         $subject->expects($this->once())
                 ->method('_sanitizeTimestamp')
@@ -92,8 +92,8 @@ class EndAwareTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $first   = rand();
-        $second  = rand();
+        $first = rand();
+        $second = rand();
 
         $reflect->_setEnd($first);
 

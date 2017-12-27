@@ -36,7 +36,7 @@ class DurationAwareTraitTest extends TestCase
 
         $mock->method('__')->willReturnArgument(0);
         $mock->method('_createInvalidArgumentException')->willReturnCallback(
-            function($msg = '', $code = 0, $prev = null) {
+            function ($msg = '', $code = 0, $prev = null) {
                 return new InvalidArgumentException($msg, $code, $prev);
             }
         );
@@ -69,8 +69,8 @@ class DurationAwareTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $input   = rand();
-        $output  = rand();
+        $input = rand();
+        $output = rand();
 
         $subject->expects($this->once())
                 ->method('_normalizeTimestamp')
@@ -91,8 +91,8 @@ class DurationAwareTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $first   = rand();
-        $second  = rand();
+        $first = rand();
+        $second = rand();
 
         $reflect->_setDuration($first);
 

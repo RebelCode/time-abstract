@@ -35,7 +35,7 @@ class TimestampAwareTraitTest extends TestCase
         );
 
         $mock->method('_createInvalidArgumentException')->willReturnCallback(
-            function($message) {
+            function ($message) {
                 return new InvalidArgumentException($message);
             }
         );
@@ -67,8 +67,8 @@ class TimestampAwareTraitTest extends TestCase
      */
     public function testGetSetTimestamp()
     {
-        $subject   = $this->createInstance();
-        $reflect   = $this->reflect($subject);
+        $subject = $this->createInstance();
+        $reflect = $this->reflect($subject);
         $timestamp = rand();
 
         $subject->expects($this->once())
@@ -94,8 +94,8 @@ class TimestampAwareTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $first   = rand();
-        $second  = rand();
+        $first = rand();
+        $second = rand();
 
         $reflect->_setTimestamp($first);
 

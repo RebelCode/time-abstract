@@ -4,7 +4,6 @@ namespace RebelCode\Time\FuncTest;
 
 use InvalidArgumentException;
 use PHPUnit_Framework_MockObject_MockObject;
-use stdClass;
 use Xpmock\TestCase;
 
 /**
@@ -61,9 +60,9 @@ class NormalizeTimestampCapableTraitTest extends TestCase
      */
     public function testSanitizeTimestamp()
     {
-        $subject  = $this->createInstance();
-        $reflect  = $this->reflect($subject);
-        $input    = rand();
+        $subject = $this->createInstance();
+        $reflect = $this->reflect($subject);
+        $input = rand();
         $newInput = rand();
 
         $subject->expects($this->once())
@@ -76,7 +75,7 @@ class NormalizeTimestampCapableTraitTest extends TestCase
     }
 
     /**
-     * Tests the normalize timestamp method when integer normalize fails
+     * Tests the normalize timestamp method when integer normalize fails.
      *
      * @since [*next-version*]
      */
@@ -84,7 +83,7 @@ class NormalizeTimestampCapableTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $input   = rand();
+        $input = rand();
 
         $this->setExpectedException('InvalidArgumentException');
 
