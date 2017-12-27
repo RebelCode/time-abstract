@@ -21,7 +21,7 @@ trait DurationAwareTrait
     protected $duration;
 
     /**
-     * Retrieves the timestamp.
+     * Retrieves the duration associated with this instance.
      *
      * @since [*next-version*]
      *
