@@ -2,10 +2,9 @@
 
 namespace RebelCode\Time\FuncTest;
 
-use \InvalidArgumentException;
+use InvalidArgumentException;
 use PHPUnit_Framework_MockObject_MockObject;
 use Xpmock\TestCase;
-use RebelCode\Time\DurationAwareTrait as TestSubject;
 
 /**
  * Tests {@see TestSubject}.
@@ -32,7 +31,7 @@ class DurationAwareTraitTest extends TestCase
     {
         // Create mock
         $mock = $this->getMockBuilder(static::TEST_SUBJECT_CLASSNAME)
-                     ->setMethods(['__', '_createInvalidArgumentException', '_sanitizeTimestamp'])
+                     ->setMethods(['__', '_createInvalidArgumentException', '_normalizeTimestamp'])
                      ->getMockForTrait();
 
         $mock->method('__')->willReturnArgument(0);
@@ -74,7 +73,7 @@ class DurationAwareTraitTest extends TestCase
         $output  = rand();
 
         $subject->expects($this->once())
-                ->method('_sanitizeTimestamp')
+                ->method('_normalizeTimestamp')
                 ->with($input)
                 ->willReturn($output);
 
@@ -84,11 +83,11 @@ class DurationAwareTraitTest extends TestCase
     }
 
     /**
-     * Tests the getter and setter methods with sanitization failure to assert whether an exception is thrown.
+     * Tests the getter and setter methods with normalization failure to assert whether an exception is thrown.
      *
      * @since [*next-version*]
      */
-    public function testGetSetDurationSanitizeFail()
+    public function testGetSetDurationNormalizeFail()
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
@@ -98,7 +97,7 @@ class DurationAwareTraitTest extends TestCase
         $reflect->_setDuration($first);
 
         $subject->expects($this->once())
-                ->method('_sanitizeTimestamp')
+                ->method('_normalizeTimestamp')
                 ->with($second)
                 ->willThrowException(new InvalidArgumentException());
 
