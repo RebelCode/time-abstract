@@ -28,6 +28,12 @@
             "RebelCode\\Time\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "RebelCode\\Time\\UnitTest\\": "test/unit",
+            "RebelCode\\Time\\FuncTest\\": "test/functional"
+        }
+    },
     "scripts": {
         "test": "phpunit",
         "csfix": "php-cs-fixer fix -vvv"
