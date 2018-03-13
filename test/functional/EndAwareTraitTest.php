@@ -32,7 +32,7 @@ class EndAwareTraitTest extends TestCase
     {
         // Create mock
         $mock = $this->getMockBuilder(static::TEST_SUBJECT_CLASSNAME)
-                     ->setMethods(['__', '_createInvalidArgumentException', '_sanitizeTimestamp'])
+                     ->setMethods(['__', '_createInvalidArgumentException', '_normalizeTimestamp'])
                      ->getMockForTrait();
 
         $mock->method('__')->willReturnArgument(0);
@@ -74,21 +74,21 @@ class EndAwareTraitTest extends TestCase
         $output = rand();
 
         $subject->expects($this->once())
-                ->method('_sanitizeTimestamp')
+                ->method('_normalizeTimestamp')
                 ->with($input)
                 ->willReturn($output);
 
         $reflect->_setEnd($input);
 
-        $this->assertEquals($output, $reflect->_getEnd(), 'Retrieved value is not equal to sanitized input.');
+        $this->assertEquals($output, $reflect->_getEnd(), 'Retrieved value is not equal to normalized input.');
     }
 
     /**
-     * Tests the getter and setter methods with sanitization failure to assert whether an exception is thrown.
+     * Tests the getter and setter methods with normalization failure to assert whether an exception is thrown.
      *
      * @since [*next-version*]
      */
-    public function testGetSetEndSanitizeFail()
+    public function testGetSetEndNormalizationFail()
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
@@ -98,7 +98,7 @@ class EndAwareTraitTest extends TestCase
         $reflect->_setEnd($first);
 
         $subject->expects($this->once())
-                ->method('_sanitizeTimestamp')
+                ->method('_normalizeTimestamp')
                 ->with($second)
                 ->willThrowException(new InvalidArgumentException());
 

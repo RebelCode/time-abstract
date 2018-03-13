@@ -72,7 +72,7 @@ class TimestampAwareTraitTest extends TestCase
         $timestamp = rand();
 
         $subject->expects($this->once())
-                ->method('_sanitizeTimestamp')
+                ->method('_normalizeTimestamp')
                 ->with($timestamp)
                 ->willReturnArgument(0);
 
@@ -81,16 +81,16 @@ class TimestampAwareTraitTest extends TestCase
         $this->assertEquals(
             $timestamp,
             $reflect->_getTimestamp(),
-            'Retrieved value is not equal to sanitized input.'
+            'Retrieved value is not equal to normalized input.'
         );
     }
 
     /**
-     * Tests the getter and setter methods to ensure that the timestamp is not set when sanitization fails.
+     * Tests the getter and setter methods to ensure that the timestamp is not set when normalization fails.
      *
      * @since [*next-version*]
      */
-    public function testGetSetTimestampSanitizeFail()
+    public function testGetSetTimestampNormalizationFail()
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
@@ -99,7 +99,7 @@ class TimestampAwareTraitTest extends TestCase
 
         $reflect->_setTimestamp($first);
 
-        $subject->method('_sanitizeTimestamp')->willThrowException(new InvalidArgumentException());
+        $subject->method('_normalizeTimestamp')->willThrowException(new InvalidArgumentException());
 
         $this->setExpectedException('InvalidArgumentException');
         $reflect->_setTimestamp($second);

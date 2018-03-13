@@ -3,6 +3,7 @@
 namespace RebelCode\Time;
 
 use Dhii\Util\String\StringableInterface as Stringable;
+use InvalidArgumentException;
 
 /**
  * Common functionality for objects that are aware of a time instance.
@@ -38,20 +39,24 @@ trait TimestampAwareTrait
      * @since [*next-version*]
      *
      * @param int|string|Stringable $timestamp The number of seconds since unix epoch. Negative numbers are allowed.
+     *
+     * @throws InvalidArgumentException If the given value is not a valid timestamp.
      */
     protected function _setTimestamp($timestamp)
     {
-        $this->timestamp = $this->_sanitizeTimestamp($timestamp);
+        $this->timestamp = $this->_normalizeTimestamp($timestamp);
     }
 
     /**
-     * Sanitizes a timestamp to an integer number.
+     * Normalizes a timestamp to an integer number.
      *
      * @since [*next-version*]
      *
-     * @param int|string|Stringable|null $timestamp The timestamp.
+     * @param int|float|string|Stringable $timestamp The timestamp.
      *
-     * @return int The sanitized timestamp.
+     * @throws InvalidArgumentException If value cannot be normalized.
+     *
+     * @return int The normalized timestamp.
      */
-    abstract protected function _sanitizeTimestamp($timestamp);
+    abstract protected function _normalizeTimestamp($timestamp);
 }
