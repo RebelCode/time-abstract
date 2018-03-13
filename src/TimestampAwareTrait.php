@@ -39,6 +39,8 @@ trait TimestampAwareTrait
      * @since [*next-version*]
      *
      * @param int|string|Stringable $timestamp The number of seconds since unix epoch. Negative numbers are allowed.
+     *
+     * @throws InvalidArgumentException If the given value is not a valid timestamp.
      */
     protected function _setTimestamp($timestamp)
     {

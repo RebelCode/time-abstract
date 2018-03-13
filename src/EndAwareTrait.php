@@ -40,6 +40,8 @@ trait EndAwareTrait
      *
      * @param int|string|Stringable $end The end timestamp, as the number of seconds since unix epoch.
      *                                   Negative numbers are allowed.
+     *
+     * @throws InvalidArgumentException If the given value is not a valid timestamp.
      */
     protected function _setEnd($end)
     {

@@ -40,6 +40,8 @@ trait StartAwareTrait
      *
      * @param int|string|Stringable $start The start timestamp, as the number of seconds since unix epoch.
      *                                     Negative numbers are allowed.
+     *
+     * @throws InvalidArgumentException If the given value is not a valid timestamp.
      */
     protected function _setStart($start)
     {
