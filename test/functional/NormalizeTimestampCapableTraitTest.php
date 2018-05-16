@@ -38,6 +38,23 @@ class NormalizeTimestampCapableTraitTest extends TestCase
     }
 
     /**
+     * Creates a new mock time instance.
+     *
+     * @since [*next-version*]
+     *
+     * @return PHPUnit_Framework_MockObject_MockObject
+     */
+    public function createTime()
+    {
+        // Create mock
+        $mock = $this->getMockBuilder('Dhii\Time\TimeInterface')
+                     ->setMethods(['getTimestamp'])
+                     ->getMockForAbstractClass();
+
+        return $mock;
+    }
+
+    /**
      * Tests whether a valid instance of the test subject can be created.
      *
      * @since [*next-version*]
@@ -54,23 +71,49 @@ class NormalizeTimestampCapableTraitTest extends TestCase
     }
 
     /**
-     * Tests the normalize timestamp method when the integer normalization is successful.
+     * Tests the normalize timestamp method when the argument is a scalar and normalization is successful.
+     *
+     * @since [*next-version*]
+     */
+    public function testSanitizeTimestampScalar()
+    {
+        $subject  = $this->createInstance();
+        $reflect  = $this->reflect($subject);
+        $input    = rand();
+        $newInput = rand();
+
+        $subject->expects($this->once())
+                ->method('_normalizeInt')
+                ->with($input)
+                ->willReturn($newInput);
+
+        $this->assertEquals($newInput, $output = $reflect->_normalizeTimestamp($input));
+        $this->assertInternalType('integer', $output);
+    }
+
+    /**
+     * Tests the normalize timestamp method when the argument is a time object and normalization is successful.
      *
      * @since [*next-version*]
      */
     public function testSanitizeTimestamp()
     {
-        $subject = $this->createInstance();
-        $reflect = $this->reflect($subject);
-        $input = rand();
-        $newInput = rand();
+        $subject    = $this->createInstance();
+        $reflect    = $this->reflect($subject);
+        $input      = $this->createTime();
+        $timestamp  = rand(0, time());
+        $normalized = rand(0, time());
+
+        $input->expects($this->once())
+              ->method('getTimestamp')
+              ->willReturn($timestamp);
 
         $subject->expects($this->once())
-            ->method('_normalizeInt')
-            ->with($input)
-            ->willReturn($newInput);
+                ->method('_normalizeInt')
+                ->with($timestamp)
+                ->willReturn($normalized);
 
-        $this->assertEquals($newInput, $output = $reflect->_normalizeTimestamp($input));
+        $this->assertEquals($normalized, $output = $reflect->_normalizeTimestamp($input));
         $this->assertInternalType('integer', $output);
     }
 
@@ -83,12 +126,12 @@ class NormalizeTimestampCapableTraitTest extends TestCase
     {
         $subject = $this->createInstance();
         $reflect = $this->reflect($subject);
-        $input = rand();
+        $input   = rand();
 
         $this->setExpectedException('InvalidArgumentException');
 
         $subject->method('_normalizeInt')
-            ->willThrowException(new InvalidArgumentException());
+                ->willThrowException(new InvalidArgumentException());
 
         $reflect->_normalizeTimestamp($input);
     }

@@ -2,6 +2,7 @@
 
 namespace RebelCode\Time;
 
+use Dhii\Time\TimeInterface;
 use Dhii\Util\String\StringableInterface as Stringable;
 use InvalidArgumentException;
 
@@ -17,7 +18,7 @@ trait NormalizeTimestampCapableTrait
      *
      * @since [*next-version*]
      *
-     * @param int|float|string|Stringable $timestamp The timestamp.
+     * @param int|float|string|Stringable|TimeInterface $timestamp The timestamp.
      *
      * @throws InvalidArgumentException If value cannot be normalized.
      *
@@ -25,6 +26,10 @@ trait NormalizeTimestampCapableTrait
      */
     protected function _normalizeTimestamp($timestamp)
     {
+        if ($timestamp instanceof TimeInterface) {
+            $timestamp = $timestamp->getTimestamp();
+        }
+
         return $this->_normalizeInt($timestamp);
     }
 
