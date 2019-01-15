@@ -11,15 +11,17 @@ use OutOfRangeException;
 /**
  * Functionality for creating time zone object instances.
  *
+ * If using PHP 5.5.10 or later, UTC offset names in any of the following forms are also accepted:
+ * - simple offset with optional "UTC" part: "UTC+2", "UTC-7", "+5", "-3"
+ * - colon notation with optional "UTC" part: "UTC+2:30", "UTC-7:15", "+5:55", "-3:20"
+ * - dot notation with optional "UTC" part: "UTC+2.5", "UTC-7.5", "+5.25", "-3.75"
+ *
  * @since [*next-version*]
  */
 trait CreateDateTimeZoneCapableTrait
 {
     /**
      * Creates a {@link DateTimeZone} object for a timezone, by name.
-     *
-     * If using PHP 5.5.10 or later, this method will accept offset names in the form of "(+/-)hhmm", as well as in
-     * the form "UTC(+/-)hh".
      *
      * @see   DateTimeZone
      * @since [*next-version*]
@@ -36,12 +38,20 @@ trait CreateDateTimeZoneCapableTrait
         $argTz = $tzName;
         $tzName = $this->_normalizeString($tzName);
 
-        // If the timezone is a UTC offset timezone, transform into a valid DateTimeZone offset.
-        // See http://php.net/manual/en/datetimezone.construct.php
-        if (preg_match('/^UTC(\+|\-)(\d{1,2})(:?(\d{2}))?$/', $tzName, $matches) && count($matches) >= 2) {
+        // Handle UTC offset timezone in colon notation
+        if (preg_match('/^(?:UTC)?(\+|\-)(\d{1,2})(:?(\d{2}))?$/', $tzName, $matches) && count($matches) >= 2) {
             $sign = $matches[1];
             $hours = (int) $matches[2];
             $minutes = count($matches) >= 4 ? (int) $matches[4] : 0;
+            $tzName = sprintf('%s%02d%02d', $sign, $hours, $minutes);
+        }
+        // Handle UTC offset timezone in dot notation
+        else if (preg_match('/^(?:UTC)?(\+|\-)(\d{1,2})(\.?(\d{1,2}))?$/', $tzName, $matches) && count($matches) >= 2) {
+            $sign = $matches[1];
+            $hours = (int) $matches[2];
+            $dotPart = count($matches) >= 4 ? $matches[4] : "0";
+            $dotPart2 = strlen($dotPart) < 2 ? $dotPart . "0" : $dotPart;
+            $minutes = intval($dotPart2) * 0.6;
             $tzName = sprintf('%s%02d%02d', $sign, $hours, $minutes);
         }
 
