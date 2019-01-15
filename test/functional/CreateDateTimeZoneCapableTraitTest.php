@@ -317,4 +317,70 @@ class CreateDateTimeZoneCapableTraitTest extends TestCase
             }
         }
     }
+
+    public function testCreateDateTimeZoneUtcColonOffsetNoUtcWord()
+    {
+        $subject = $this->createInstance();
+        $reflect = $this->reflect($subject);
+
+        $paramTzName = '+5:30';
+
+        $subject->expects($this->once())
+                ->method('_normalizeString')
+                ->with($paramTzName)
+                ->willReturnArgument(0);
+        $subject->method('_createOutOfRangeException')->willReturn(new OutOfRangeException());
+
+        $supportsOffsets = version_compare(phpversion(), '5.5.10', '>=');
+
+        try {
+            $result = $reflect->_createDateTimeZone($paramTzName);
+
+            if ($supportsOffsets) {
+                $this->assertInstanceOf('DateTimeZone', $result);
+                $this->assertEquals('+05:30', $result->getName());
+            } else {
+                $this->fail('Expected subject to fail with offset timezone string (since version is pre-5.5)');
+            }
+        } catch (Exception $exception) {
+            if ($supportsOffsets) {
+                $this->fail($exception->getMessage());
+            } else {
+                $this->assertInstanceOf('OutOfRangeException', $exception);
+            }
+        }
+    }
+
+    public function testCreateDateTimeZoneUtcDotOffsetNoUtcWord()
+    {
+        $subject = $this->createInstance();
+        $reflect = $this->reflect($subject);
+
+        $paramTzName = '-12.5';
+
+        $subject->expects($this->once())
+                ->method('_normalizeString')
+                ->with($paramTzName)
+                ->willReturnArgument(0);
+        $subject->method('_createOutOfRangeException')->willReturn(new OutOfRangeException());
+
+        $supportsOffsets = version_compare(phpversion(), '5.5.10', '>=');
+
+        try {
+            $result = $reflect->_createDateTimeZone($paramTzName);
+
+            if ($supportsOffsets) {
+                $this->assertInstanceOf('DateTimeZone', $result);
+                $this->assertEquals('-12:30', $result->getName());
+            } else {
+                $this->fail('Expected subject to fail with offset timezone string (since version is pre-5.5)');
+            }
+        } catch (Exception $exception) {
+            if ($supportsOffsets) {
+                $this->fail($exception->getMessage());
+            } else {
+                $this->assertInstanceOf('OutOfRangeException', $exception);
+            }
+        }
+    }
 }

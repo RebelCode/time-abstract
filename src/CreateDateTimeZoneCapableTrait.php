@@ -37,14 +37,14 @@ trait CreateDateTimeZoneCapableTrait
         $tzName = $this->_normalizeString($tzName);
 
         // Handle UTC offset timezone in colon notation
-        if (preg_match('/^UTC(\+|\-)(\d{1,2})(:?(\d{2}))?$/', $tzName, $matches) && count($matches) >= 2) {
+        if (preg_match('/^(?:UTC)?(\+|\-)(\d{1,2})(:?(\d{2}))?$/', $tzName, $matches) && count($matches) >= 2) {
             $sign = $matches[1];
             $hours = (int) $matches[2];
             $minutes = count($matches) >= 4 ? (int) $matches[4] : 0;
             $tzName = sprintf('%s%02d%02d', $sign, $hours, $minutes);
         }
         // Handle UTC offset timezone in dot notation
-        else if (preg_match('/^UTC(\+|\-)(\d{1,2})(\.?(\d{1,2}))?$/', $tzName, $matches) && count($matches) >= 2) {
+        else if (preg_match('/^(?:UTC)?(\+|\-)(\d{1,2})(\.?(\d{1,2}))?$/', $tzName, $matches) && count($matches) >= 2) {
             $sign = $matches[1];
             $hours = (int) $matches[2];
             $dotPart = count($matches) >= 4 ? $matches[4] : "0";
