@@ -11,15 +11,17 @@ use OutOfRangeException;
 /**
  * Functionality for creating time zone object instances.
  *
+ * If using PHP 5.5.10 or later, UTC offset names in any of the following forms are also accepted:
+ * - simple offset with optional "UTC" part: "UTC+2", "UTC-7", "+5", "-3"
+ * - colon notation with optional "UTC" part: "UTC+2:30", "UTC-7:15", "+5:55", "-3:20"
+ * - dot notation with optional "UTC" part: "UTC+2.5", "UTC-7.5", "+5.25", "-3.75"
+ *
  * @since [*next-version*]
  */
 trait CreateDateTimeZoneCapableTrait
 {
     /**
      * Creates a {@link DateTimeZone} object for a timezone, by name.
-     *
-     * If using PHP 5.5.10 or later, this method will accept offset names in the form of "(+/-)hhmm", as well as in
-     * the form "UTC(+/-)hh".
      *
      * @see   DateTimeZone
      * @since [*next-version*]
