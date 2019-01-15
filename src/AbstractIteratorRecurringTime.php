@@ -9,14 +9,14 @@ use Dhii\Time\TimeInterface;
 /**
  * Abstract functionality for recurring time instances that implement iterator-like behaviour.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 abstract class AbstractIteratorRecurringTime
 {
     /**
      * A temporary iteration cursor representing the timestamp of the current item.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var int
      */
@@ -25,7 +25,7 @@ abstract class AbstractIteratorRecurringTime
     /**
      * Resets iteration.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     protected function _reset()
     {
@@ -35,7 +35,7 @@ abstract class AbstractIteratorRecurringTime
     /**
      * Checks if the iteration is still valid.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return bool True if the iteration is valid and can continue, false if the end has been reached.
      */
@@ -47,7 +47,7 @@ abstract class AbstractIteratorRecurringTime
     /**
      * Retrieves the current iteration value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return TimeInterface The current iteration time instance.
      */
@@ -59,7 +59,7 @@ abstract class AbstractIteratorRecurringTime
     /**
      * Retrieves the key of the current iteration value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return int The timestamp of the current iteration time instance.
      */
@@ -71,7 +71,7 @@ abstract class AbstractIteratorRecurringTime
     /**
      * Advances the iteration forward by the interval.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     protected function _next()
     {
@@ -81,7 +81,7 @@ abstract class AbstractIteratorRecurringTime
     /**
      * Retrieves the period of time in which the time recurs.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return PeriodInterface The period of time.
      */
@@ -90,7 +90,7 @@ abstract class AbstractIteratorRecurringTime
     /**
      * Retrieves the interval between recurring times.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return IntervalInterface The interval.
      */
@@ -99,7 +99,7 @@ abstract class AbstractIteratorRecurringTime
     /**
      * Creates a new time instance.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int $timestamp The timestamp.
      *

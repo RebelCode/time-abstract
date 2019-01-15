@@ -16,7 +16,7 @@ use OutOfRangeException;
  * - colon notation with optional "UTC" part: "UTC+2:30", "UTC-7:15", "+5:55", "-3:20"
  * - dot notation with optional "UTC" part: "UTC+2.5", "UTC-7.5", "+5.25", "-3.75"
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 trait CreateDateTimeZoneCapableTrait
 {
@@ -24,7 +24,7 @@ trait CreateDateTimeZoneCapableTrait
      * Creates a {@link DateTimeZone} object for a timezone, by name.
      *
      * @see   DateTimeZone
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string|Stringable $tzName The name of the timezone.
      *
@@ -70,7 +70,7 @@ trait CreateDateTimeZoneCapableTrait
      * The values that can be normalized are any scalar values, as well as
      * {@see StringableInterface).
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param Stringable|string|int|float|bool $subject The value to normalize to string.
      *
@@ -83,7 +83,7 @@ trait CreateDateTimeZoneCapableTrait
     /**
      * Creates a new invalid argument exception.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string|Stringable|null $message  The error message, if any.
      * @param int|null               $code     The error code, if any.
@@ -102,7 +102,7 @@ trait CreateDateTimeZoneCapableTrait
     /**
      * Creates a new Dhii Out Of Range exception.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string|Stringable|int|float|bool|null $message  The message, if any.
      * @param int|float|string|Stringable|null      $code     The numeric error code, if any.
@@ -121,7 +121,7 @@ trait CreateDateTimeZoneCapableTrait
     /**
      * Translates a string, and replaces placeholders.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string $string  The format string to translate.
      * @param array  $args    Placeholder values to replace in the string.

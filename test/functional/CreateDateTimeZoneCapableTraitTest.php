@@ -13,21 +13,21 @@ use PHPUnit_Framework_MockObject_MockObject as MockObject;
 /**
  * Tests {@see TestSubject}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class CreateDateTimeZoneCapableTraitTest extends TestCase
 {
     /**
      * The class name of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     const TEST_SUBJECT_CLASSNAME = 'RebelCode\Time\CreateDateTimeZoneCapableTrait';
 
     /**
      * Creates a new instance of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param array $methods The methods to mock.
      *
@@ -56,7 +56,7 @@ class CreateDateTimeZoneCapableTraitTest extends TestCase
      *
      * The resulting product will be a numeric array where the values of both inputs are present, without duplicates.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param array $destination The base array.
      * @param array $source      The array with more keys.
@@ -75,7 +75,7 @@ class CreateDateTimeZoneCapableTraitTest extends TestCase
      * internal class, such as in the case with exceptions. Helps to avoid
      * writing hard-coded stubs.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string   $className      Name of the class for the mock to extend.
      * @param string[] $interfaceNames Names of the interfaces for the mock to implement.
@@ -98,7 +98,7 @@ class CreateDateTimeZoneCapableTraitTest extends TestCase
     /**
      * Creates a new exception.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string $message The exception message.
      *
@@ -116,7 +116,7 @@ class CreateDateTimeZoneCapableTraitTest extends TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCanBeCreated()
     {
@@ -129,6 +129,9 @@ class CreateDateTimeZoneCapableTraitTest extends TestCase
         );
     }
 
+    /**
+     * @since 0.1
+     */
     public function testCreateDateTimeZone()
     {
         $subject = $this->createInstance();
@@ -153,6 +156,9 @@ class CreateDateTimeZoneCapableTraitTest extends TestCase
         }
     }
 
+    /**
+     * @since 0.1
+     */
     public function testCreateDateTimeZoneUtcOffset()
     {
         $subject = $this->createInstance();
@@ -186,6 +192,9 @@ class CreateDateTimeZoneCapableTraitTest extends TestCase
         }
     }
 
+    /**
+     * @since 0.1.1
+     */
     public function testCreateDateTimeZoneUtcColonOffset()
     {
         $subject = $this->createInstance();
@@ -219,6 +228,9 @@ class CreateDateTimeZoneCapableTraitTest extends TestCase
         }
     }
 
+    /**
+     * @since 0.1.1
+     */
     public function testCreateDateTimeZoneUtcColonOffsetNegative()
     {
         $subject = $this->createInstance();
@@ -252,6 +264,9 @@ class CreateDateTimeZoneCapableTraitTest extends TestCase
         }
     }
 
+    /**
+     * @since 0.1.1
+     */
     public function testCreateDateTimeZoneUtcDotOffset()
     {
         $subject = $this->createInstance();
@@ -285,6 +300,9 @@ class CreateDateTimeZoneCapableTraitTest extends TestCase
         }
     }
 
+    /**
+     * @since 0.1.1
+     */
     public function testCreateDateTimeZoneUtcDotOffsetNegative()
     {
         $subject = $this->createInstance();
@@ -318,6 +336,9 @@ class CreateDateTimeZoneCapableTraitTest extends TestCase
         }
     }
 
+    /**
+     * @since 0.1.1
+     */
     public function testCreateDateTimeZoneUtcColonOffsetNoUtcWord()
     {
         $subject = $this->createInstance();
@@ -351,6 +372,9 @@ class CreateDateTimeZoneCapableTraitTest extends TestCase
         }
     }
 
+    /**
+     * @since 0.1.1
+     */
     public function testCreateDateTimeZoneUtcDotOffsetNoUtcWord()
     {
         $subject = $this->createInstance();

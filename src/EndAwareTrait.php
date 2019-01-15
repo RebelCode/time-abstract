@@ -8,14 +8,14 @@ use InvalidArgumentException;
 /**
  * Common functionality for objects that are aware of an end timestamp.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 trait EndAwareTrait
 {
     /**
      * The end timestamp: the number of seconds since unix epoch.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var int
      */
@@ -24,7 +24,7 @@ trait EndAwareTrait
     /**
      * Retrieves the end timestamp.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return int The end timestamp, as the number of seconds since unix epoch.
      */
@@ -36,7 +36,7 @@ trait EndAwareTrait
     /**
      * Sets the end timestamp.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int|string|Stringable $end The end timestamp, as the number of seconds since unix epoch.
      *                                   Negative numbers are allowed.
@@ -51,7 +51,7 @@ trait EndAwareTrait
     /**
      * Normalizes a timestamp to an integer number.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int|float|string|Stringable $timestamp The timestamp.
      *

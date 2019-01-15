@@ -10,21 +10,21 @@ use RebelCode\Time\EndAwareTrait as TestSubject;
 /**
  * Tests {@see TestSubject}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class EndAwareTraitTest extends TestCase
 {
     /**
      * The class name of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     const TEST_SUBJECT_CLASSNAME = 'RebelCode\Time\EndAwareTrait';
 
     /**
      * Creates a new instance of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return PHPUnit_Framework_MockObject_MockObject
      */
@@ -48,7 +48,7 @@ class EndAwareTraitTest extends TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCanBeCreated()
     {
@@ -64,7 +64,7 @@ class EndAwareTraitTest extends TestCase
     /**
      * Tests the getter and setter methods to ensure correct assignment and retrieval.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testGetSetEnd()
     {
@@ -86,7 +86,7 @@ class EndAwareTraitTest extends TestCase
     /**
      * Tests the getter and setter methods with normalization failure to assert whether an exception is thrown.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testGetSetEndNormalizationFail()
     {

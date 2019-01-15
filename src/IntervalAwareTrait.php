@@ -10,14 +10,14 @@ use InvalidArgumentException;
 /**
  * Common functionality for objects that are aware of an interval.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 trait IntervalAwareTrait
 {
     /**
      * The interval instance.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var IntervalInterface
      */
@@ -26,7 +26,7 @@ trait IntervalAwareTrait
     /**
      * Retrieves the interval associated with this instance.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return IntervalInterface|null
      */
@@ -38,7 +38,7 @@ trait IntervalAwareTrait
     /**
      * Sets the interval for this instance.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param IntervalInterface|null $interval
      */
@@ -59,7 +59,7 @@ trait IntervalAwareTrait
     /**
      * Creates a new invalid argument exception.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string|Stringable|null $message  The error message, if any.
      * @param int|null               $code     The error code, if any.
@@ -78,7 +78,7 @@ trait IntervalAwareTrait
     /**
      * Translates a string, and replaces placeholders.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string $string  The format string to translate.
      * @param array  $args    Placeholder values to replace in the string.

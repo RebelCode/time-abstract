@@ -11,21 +11,21 @@ use Xpmock\TestCase;
 /**
  * Tests {@see RebelCode\Time\AbstractIteratorRecurringTime}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class AbstractIteratorRecurringTimeTest extends TestCase
 {
     /**
      * The class name of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     const TEST_SUBJECT_CLASSNAME = 'RebelCode\Time\AbstractIteratorRecurringTime';
 
     /**
      * Creates a new instance of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param array $methods The methods to mock.
      *
@@ -52,7 +52,7 @@ class AbstractIteratorRecurringTimeTest extends TestCase
     /**
      * Creates a new time period object for testing purposes.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param TimeInterface $start The start time.
      * @param TimeInterface $end   The end time.
@@ -71,7 +71,7 @@ class AbstractIteratorRecurringTimeTest extends TestCase
     /**
      * Creates a new time object for testing purposes.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int $timestamp The timestamp.
      *
@@ -87,7 +87,7 @@ class AbstractIteratorRecurringTimeTest extends TestCase
     /**
      * Creates a new interval object for testing purposes.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int $duration The duration in seconds.
      *
@@ -103,7 +103,7 @@ class AbstractIteratorRecurringTimeTest extends TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCanBeCreated()
     {
@@ -119,7 +119,7 @@ class AbstractIteratorRecurringTimeTest extends TestCase
     /**
      * Tests the reset method to ensure that all the data associated with iteration is reset.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testReset()
     {
@@ -148,7 +148,7 @@ class AbstractIteratorRecurringTimeTest extends TestCase
     /**
      * Tests the next, current and key methods to ensure that advancement of time works correctly.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testNextCurrent()
     {
@@ -188,7 +188,7 @@ class AbstractIteratorRecurringTimeTest extends TestCase
     /**
      * Tests the valid method to ensure that it correctly determines when the end has been reached.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testValid()
     {

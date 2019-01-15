@@ -10,14 +10,14 @@ use InvalidArgumentException;
 /**
  * Common functionality of objects that are aware of a period.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 trait PeriodAwareTrait
 {
     /**
      * The period instance.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var PeriodInterface|null
      */
@@ -26,7 +26,7 @@ trait PeriodAwareTrait
     /**
      * Retrieves the period associated with this instance.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return PeriodInterface|null The period instance, if any.
      */
@@ -38,7 +38,7 @@ trait PeriodAwareTrait
     /**
      * Sets the period for this instance.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param PeriodInterface|null $period The period instance, or null.
      */
@@ -59,7 +59,7 @@ trait PeriodAwareTrait
     /**
      * Creates a new invalid argument exception.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string|Stringable|null $message  The error message, if any.
      * @param int|null               $code     The error code, if any.
@@ -78,7 +78,7 @@ trait PeriodAwareTrait
     /**
      * Translates a string, and replaces placeholders.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string $string  The format string to translate.
      * @param array  $args    Placeholder values to replace in the string.

@@ -10,21 +10,21 @@ use Xpmock\TestCase;
 /**
  * Tests {@see TestSubject}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class IntervalAwareTraitTest extends TestCase
 {
     /**
      * The class name of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     const TEST_SUBJECT_CLASSNAME = 'RebelCode\Time\IntervalAwareTrait';
 
     /**
      * Creates a new instance of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return TestSubject
      */
@@ -46,7 +46,7 @@ class IntervalAwareTraitTest extends TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCanBeCreated()
     {
@@ -62,7 +62,7 @@ class IntervalAwareTraitTest extends TestCase
     /**
      * Tests the interval getter and setter methods with a valid interval instance.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testGetSetInterval()
     {
@@ -80,7 +80,7 @@ class IntervalAwareTraitTest extends TestCase
     /**
      * Tests the interval getter and setter methods with a null value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testGetSetIntervalNull()
     {
@@ -95,7 +95,7 @@ class IntervalAwareTraitTest extends TestCase
     /**
      * Tests the interval getter and setter methods with an invalid instance.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testGetSetIntervalInvalid()
     {

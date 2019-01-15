@@ -9,21 +9,21 @@ use Xpmock\TestCase;
 /**
  * Tests {@see TestSubject}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class StartAwareTraitTest extends TestCase
 {
     /**
      * The class name of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     const TEST_SUBJECT_CLASSNAME = 'RebelCode\Time\StartAwareTrait';
 
     /**
      * Creates a new instance of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return PHPUnit_Framework_MockObject_MockObject
      */
@@ -47,7 +47,7 @@ class StartAwareTraitTest extends TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCanBeCreated()
     {
@@ -63,7 +63,7 @@ class StartAwareTraitTest extends TestCase
     /**
      * Tests the getter and setter methods to ensure correct assignment and retrieval.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testGetSetStart()
     {
@@ -86,7 +86,7 @@ class StartAwareTraitTest extends TestCase
      * Tests the getter and setter methods when normalization fails to ensure that exceptions are thrown and that
      * invalid timestamps are not set.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testGetSetStartNormalizationFail()
     {

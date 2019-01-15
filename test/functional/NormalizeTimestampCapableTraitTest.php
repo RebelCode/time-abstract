@@ -9,21 +9,21 @@ use Xpmock\TestCase;
 /**
  * Tests {@see TestSubject}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class NormalizeTimestampCapableTraitTest extends TestCase
 {
     /**
      * The class name of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     const TEST_SUBJECT_CLASSNAME = 'RebelCode\Time\NormalizeTimestampCapableTrait';
 
     /**
      * Creates a new instance of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return PHPUnit_Framework_MockObject_MockObject
      */
@@ -40,7 +40,7 @@ class NormalizeTimestampCapableTraitTest extends TestCase
     /**
      * Creates a new mock time instance.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return PHPUnit_Framework_MockObject_MockObject
      */
@@ -57,7 +57,7 @@ class NormalizeTimestampCapableTraitTest extends TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCanBeCreated()
     {
@@ -73,7 +73,7 @@ class NormalizeTimestampCapableTraitTest extends TestCase
     /**
      * Tests the normalize timestamp method when the argument is a scalar and normalization is successful.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testSanitizeTimestampScalar()
     {
@@ -94,7 +94,7 @@ class NormalizeTimestampCapableTraitTest extends TestCase
     /**
      * Tests the normalize timestamp method when the argument is a time object and normalization is successful.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testSanitizeTimestamp()
     {
@@ -120,7 +120,7 @@ class NormalizeTimestampCapableTraitTest extends TestCase
     /**
      * Tests the normalize timestamp method when integer normalize fails.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testSanitizeTimestampFail()
     {

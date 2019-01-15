@@ -9,21 +9,21 @@ use RebelCode\Time\AbstractPeriod as TestSubject;
 /**
  * Tests {@see TestSubject}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class AbstractPeriodTest extends TestCase
 {
     /**
      * The class name of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     const TEST_SUBJECT_CLASSNAME = 'RebelCode\Time\AbstractPeriod';
 
     /**
      * Creates a time instance for testing purposes.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int $timestamp The timestamp.
      *
@@ -40,7 +40,7 @@ class AbstractPeriodTest extends TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCanBeCreated()
     {
@@ -60,7 +60,7 @@ class AbstractPeriodTest extends TestCase
     /**
      * Tests the duration getter method.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testGetDuration()
     {

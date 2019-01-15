@@ -7,14 +7,14 @@ use Dhii\Time\TimeInterface;
 /**
  * Abstract common functionality for periods of time.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 abstract class AbstractPeriod
 {
     /**
      * Retrieves the start time of this period.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return TimeInterface
      */
@@ -23,7 +23,7 @@ abstract class AbstractPeriod
     /**
      * Retrieves the end time of this period.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return TimeInterface
      */
@@ -32,7 +32,7 @@ abstract class AbstractPeriod
     /**
      * Retrieves the duration of this period.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return int An integer number of seconds.
      */

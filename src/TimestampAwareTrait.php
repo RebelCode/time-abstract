@@ -8,14 +8,14 @@ use InvalidArgumentException;
 /**
  * Common functionality for objects that are aware of a time instance.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 trait TimestampAwareTrait
 {
     /**
      * An integer number of seconds since unix epoch.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var int
      */
@@ -24,7 +24,7 @@ trait TimestampAwareTrait
     /**
      * Retrieves the timestamp.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return int An integer number of seconds since unix epoch.
      */
@@ -36,7 +36,7 @@ trait TimestampAwareTrait
     /**
      * Sets the timestamp.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int|string|Stringable $timestamp The number of seconds since unix epoch. Negative numbers are allowed.
      *
@@ -50,7 +50,7 @@ trait TimestampAwareTrait
     /**
      * Normalizes a timestamp to an integer number.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int|float|string|Stringable $timestamp The timestamp.
      *

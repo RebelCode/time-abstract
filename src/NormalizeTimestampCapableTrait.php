@@ -9,14 +9,14 @@ use InvalidArgumentException;
 /**
  * Common functionality for objects that can normalize timestamps.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 trait NormalizeTimestampCapableTrait
 {
     /**
      * Normalizes a timestamp to an integer number.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int|float|string|Stringable|TimeInterface $timestamp The timestamp.
      *
@@ -39,7 +39,7 @@ trait NormalizeTimestampCapableTrait
      * The value must be a whole number, or a string representing such a number,
      * or an object representing such a string.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int|float|string|Stringable $value The value to normalize.
      *

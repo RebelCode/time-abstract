@@ -7,14 +7,14 @@ use Dhii\Util\String\StringableInterface as Stringable;
 /**
  * Common functionality for objects that are aware of a duration.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 trait DurationAwareTrait
 {
     /**
      * An integer number of seconds.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var int
      */
@@ -23,7 +23,7 @@ trait DurationAwareTrait
     /**
      * Retrieves the duration associated with this instance.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return int An integer number of seconds since unix epoch.
      */
@@ -35,7 +35,7 @@ trait DurationAwareTrait
     /**
      * Sets the duration for this instance.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int|string|Stringable $duration The number of seconds since unix epoch.
      */
@@ -47,7 +47,7 @@ trait DurationAwareTrait
     /**
      * Normalizes a timestamp value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int|string|Stringable $timestamp The timestamp.
      *
