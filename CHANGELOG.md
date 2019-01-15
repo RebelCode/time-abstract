@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
+
+## [0.1.1] - 2019-01-15
 ### Added
 - UTC offset timezones in dot notation (example `"UTC-4.5"`) are now supported.
 - UTC offset timezone names are no longer required to include the `"UTC"` part.
